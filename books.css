@@ -1,0 +1,925 @@
+:root {
+  --color-primary: #5d1111;
+  --color-primary-complement: #6e0f0f;
+  --color-secondary: #c14242;
+  --color-secondary-light: #f26565;
+  --color-secondary-lighter: #f77676;
+  --color-secondary-lightest: #ff9999;
+
+  --color-alternative-primary: #1ecbe1;
+  --color-alternative-secondary-light: #a6c8cc;
+  --color-alternative-secondary-lightest: #d5e8ea;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Times New Roman", serif;
+}
+
+#homeLink {
+  text-decoration: none;
+  color: #fff;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* ----- Overlay ----- */
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  flex-direction: column;
+  flex-wrap: wrap;
+  place-content: center;
+  animation: fadeIn ease-out 400ms;
+}
+
+/* Dessa selectorer läggs till genom js */
+.bookOverlay {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  background-color: #d0d0d0;
+  border: 3px #fff solid;
+  animation: fadeInUp cubic-bezier(0.49, 0.04, 0.44, 1) 670ms;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0%;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.overlayBookImage {
+  display: none;
+}
+
+.overlayContent {
+  padding: 1.25rem;
+}
+
+.overlayHeading {
+  margin-bottom: 0.75rem;
+}
+
+.overlayHeading h3 {
+  font-size: 2rem;
+  letter-spacing: -0.2px;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.overlayHeading h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  font-style: italic;
+}
+
+.overlayInfo {
+  border-top: 2px solid black;
+}
+
+.overlayInfo p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ----- Overlay slut ----- */
+
+/* Header */
+
+header {
+  background-color: var(--color-primary);
+  padding: 20px 0;
+  height: 70px;
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.header {
+  border: 1px solid;
+}
+
+.logo-h1 {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-h1 img,
+.head-icons img {
+  height: 40px;
+  width: 40px;
+}
+
+.search-icon {
+  display: none;
+  margin-right: 10px;
+}
+
+.head-icons {
+  margin-top: 15px;
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#logo {
+  margin-top: 5px;
+}
+
+#logo,
+.head-icons {
+  -webkit-filter: invert(100%);
+}
+/* Header slut */
+
+/* ----- Hero-container ----- */
+.heroContainer {
+  border: 1px solid;
+  background-image: url(./images/heroBW.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 230px;
+  grid-area: 1 / 1 / 4 / 13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.searchContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(93, 17, 17, 0.85); /* samma färg som color-primary */
+  z-index: -1;
+}
+
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  background-color: white;
+  padding: 10px;
+  width: 85%;
+  box-shadow: 1px 1px 2px rgb(49, 49, 49);
+}
+nav ul {
+  list-style: none;
+  padding: 10;
+  margin: 10; 
+  margin-bottom: 2rem ;
+}
+
+nav li {
+  display: inline; 
+  
+}
+
+nav a {
+  color: white; 
+  text-decoration: none; 
+  padding: 5px 5px; 
+  background-color: #5d1111; 
+  font-family: "Times New Roman", serif;
+  font-size: 20px;
+  margin-left: 2.5vw;
+  margin-bottom: 10rem;
+}
+
+
+
+
+
+
+
+
+
+.searchHeader {
+  font-size: 22px;
+  color: black;
+  margin: 10px 0px 10px 0px;
+  text-align: center;
+}
+
+.searchForm {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "btn1 btn2"
+    "input input";
+}
+
+#btn1 {
+  grid-area: btn1;
+  background-color: var(--color-primary-complement);
+  color: white;
+  border-radius: 3px 0px 0px 0px;
+  border-right: 0px;
+}
+
+#btn2 {
+  grid-area: btn2;
+  background-color: white;
+  border-radius: 0px 3px 0px 0px;
+}
+
+#btn1,
+#btn2 {
+  height: 11mm;
+  border: 1px solid black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#searchForm {
+  grid-area: input;
+  height: 11mm;
+  border: 1px solid;
+  border-top: 0px;
+  border-radius: 0px 0px 3px 3px;
+  padding: 5px;
+  margin-top: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* ----- Hero Container slut ------ */
+
+.sortButtonsContainer {
+  /* border: 1px solid white; */
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+}
+
+#sortHeader {
+  font-size: 11px;
+  margin-right: 10px;
+}
+
+.sortBtn {
+  margin-inline: 5px;
+  width: 70px;
+  font-size: 11px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.sortBtn.active {
+  background-color: #fa1c1c;
+}
+
+/* ----- bookCard ----- */
+.bookContainer {
+  border: 1px solid;
+  background-color: var(--color-primary-complement);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 95%;
+  margin-top: 30px;
+  margin-inline: auto;
+}
+.bookHeader {
+  font-size: 3rem;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.bookCard {
+  border: 3px solid white;
+  background-color: var(--color-alternative-secondary-lightest);
+  color: black;
+  width: 65%;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookContent {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.bookHeader {
+  text-align: center;
+}
+
+.bookImage {
+  height: 300px;
+  cursor: pointer;
+}
+
+.bookImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.bookHeading h3 {
+  font-size: 1.7rem;
+  letter-spacing: -0.2px;
+  font-weight: 700;
+}
+
+.bookHeading h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  font-style: italic;
+}
+
+.bookInfoDesktop {
+  display: flex;
+}
+
+.bookInfoDesktop span {
+  display: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.bookBtn {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.bookBtn img {
+  height: 40px;
+}
+
+.bookBtn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.bookCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 10px rgb(20, 20, 20);
+  background-color: var(--color-alternative-secondary-light);
+}
+
+.bookCard:hover .bookHeading h3 {
+  color: var(--color-secondary);
+}
+
+.bookCard:hover .bookImage {
+  filter: brightness(115%);
+  animation-name: scaleing;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
+}
+
+@keyframes scaleing {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*------Lägg till bok formulär-------*/
+.addBookContainer {
+  width: 95%;
+  margin: auto;
+}
+
+.addBookWrapper {
+  background-color: var(--color-primary-complement);
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 3px 2px lightgray;
+}
+
+.addBookWrapper h2 {
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.addBookForm {
+  padding-top: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.addBookImg img {
+  display: none;
+}
+
+#addBook {
+  width: 80%;
+}
+
+#addBook input,
+#addBook select {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 8px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.addBookForm label,
+.addBookForm input,
+.addBookForm option,
+#submit,
+.bookInfoDesktop span {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.submitBtnWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 15px 0;
+}
+
+#submit {
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: white;
+  background-color: var(--color-primary-complement);
+  cursor: pointer;
+  border: 1px solid var(--color-primary-complement);
+}
+
+#submit:hover {
+  background-color: white;
+  color: var(--color-primary);
+  border: 1px solid black;
+}
+
+/* ----- Footer ----- */
+
+.footer {
+  background-color: var(--color-primary);
+  color: white;
+  list-style-type: none;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.leftLinkColumn {
+  grid-column: 1;
+}
+
+.rightLinkColumn {
+  grid-column: 2;
+}
+
+.links,
+.social {
+  padding: 1rem;
+}
+
+.links {
+  padding-bottom: 0;
+}
+
+.links a,
+.link a:visited {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.footer-links,
+.social-list ul {
+  display: flex;
+}
+
+.footer-links {
+  justify-content: flex-start;
+}
+
+.social-list {
+  align-items: center;
+}
+
+.social img {
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
+
+.footer h4 {
+  font-size: 1.33rem;
+}
+
+.footer li {
+  margin-top: 5px;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Footer slut*/
+
+/* ----- Surfplatta ----- */
+
+@media (min-width: 620px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .search-icon {
+    display: initial;
+  }
+
+  .frequentContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* hero */
+  .heroContainer {
+    height: 350px;
+  }
+
+  .searchBox {
+    width: 75%;
+    height: 60%;
+  }
+
+  .searchHeader {
+    font-size: 26px;
+    margin: 20px 0px 10px 0px;
+  }
+
+  #btn1,
+  #btn2,
+  .searchForm input {
+    height: 13mm;
+  }
+
+  #sortHeader {
+    font-size: 14px;
+  }
+
+  .sortBtn {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  /* hero slut */
+
+  /* --- Böcker --- */
+  .book {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0;
+    width: 100%;
+  }
+
+  .bookCard {
+    min-width: 240px;
+  }
+
+  .bookImage {
+    height: 350px;
+  }
+
+  .bookContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 40px;
+    height: 100%;
+  }
+
+  .bookHeading {
+    min-height: 110px;
+  }
+
+  .bookInfoDesktop {
+    border-top: 2px solid var(--color-primary-complement);
+    padding: 10px 0;
+  }
+
+  .bookInfoDesktop span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bookBtn {
+    justify-self: end;
+    align-self: end;
+    margin-top: 4px;
+    margin-left: 4px;
+  }
+
+  /*-- Lägg till bok formulär --*/
+  .titleAuthorWrapper,
+  .yearGenreWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .titleAuthorWrapper div,
+  .yearGenreWrapper div {
+    width: 50%;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .social,
+  .links {
+    width: 50%;
+    padding-bottom: 1.5rem;
+  }
+
+  .links {
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .social-list ul {
+    flex-direction: row;
+  }
+
+  .shortcuts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+/* ----- Laptop / datorskärm ----- */
+
+@media (min-width: 870px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  /* ----- Overlay ----- */
+
+  .bookOverlay {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    grid-template-rows: 1fr;
+  }
+
+  .overlayBookImage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .overlayHeading h3 {
+    font-size: 3.3rem;
+  }
+
+  .overlayHeading h4 {
+    font-size: 2rem;
+  }
+
+  .overlayInfo p {
+    font-size: 1.3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 13;
+  }
+
+  /* ----- Overlay slut ----- */
+
+  /* hero */
+  .heroContainer {
+    height: 450px;
+  }
+
+  .searchBox {
+    max-width: 700px;
+    width: 55%;
+    height: 50%;
+  }
+
+  .searchHeader {
+    font-size: 30px;
+    margin: 25px 0px 10px 0px;
+  }
+
+  .searchForm {
+    margin: 20px;
+  }
+  /* hero slut */
+
+  #sortHeader {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .sortBtn {
+    width: 110px;
+    font-size: 16px;
+  }
+
+  .sortBtn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+
+  /* --- Böcker --- */
+  .book {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /*-- Lägg till bok formulär --*/
+  .addBookFormWrapper {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 354.8px auto;
+  }
+
+  .addBookForm {
+    width: 100%;
+    grid-column: 2/2;
+  }
+
+  .addBookImg {
+    grid-column: 1/1;
+    width: 100%;
+  }
+
+  .addBookImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .titleAuthorWrapper,
+  .yearGenreWrapper {
+    display: contents;
+    gap: 0;
+  }
+
+  .titleAuthorWrapper div,
+  .yearGenreWrapper div {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1100px) {
+  /* --- Böcker --- */
+  .book {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .bookCard {
+    width: 90%;
+  }
+
+  .bookImage {
+    min-height: 400px;
+  }
+
+  /* ------ Overlay ------ */
+
+  .bookOverlay {
+    grid-template-columns: 3fr 7fr;
+  }
+
+  /* ------ Overlay slut ------ */
+
+  /*-- Lägg till bok formulär --*/
+  .addBookContainer {
+    max-width: 1100px;
+  }
+
+  .addBookFormWrapper {
+    grid-template-columns: 300px auto;
+  }
+
+  #addBook {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .titleAuthorWrapper,
+  .yearGenreWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .titleAuthorWrapper div,
+  .yearGenreWrapper div {
+    width: 50%;
+  }
+}

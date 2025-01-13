@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>Mattisskogens Universitetsbibliotek</title>
+    <meta
+      name="description"
+      content="Mattisskogens universitetsbibliotek är världsledande i rumpnisse forskning"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="stylefor.css" />
+  </head>
+  <body>
+    <header>
+
+      <div class="logo-h1">
+        <a href="index.html">
+          <img
+            src="icons/book-open-icon.png"
+            alt="logotyp för universitetet"
+            id="logo"
+        /></a>
+        <a href="index.html" id="homeLink">
+          <h1 class="title">Mattisskogens Universitetsbibliotek</h1>
+        </a>
+      </div>
+      <div class="head-icons">
+        <img
+          src="icons/search-icon.png"
+          alt="ikon för sökfunktion"
+          class="search-icon"
+        />
+        <img
+          src="icons/three-horizontal-lines-icon.png"
+          class="ikon för hamburgar-meny"
+          alt="hamburger icon"
+        />
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Startsida</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="form">
+        <h2 class="registerHeader">Registrera Användare</h2>
+        <form action="#" method="post" class="container p-3">
+          <div class="row g-3">
+            <div class="col-sm-12 col-md-6 mb-3">
+              <label for="firstName" class="form-label">Namn*</label>
+              <input type="text" class="form-control" id="firstName" required />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-3">
+              <label for="lastName" class="form-label">Efternamn*</label>
+              <input type="text" class="form-control" id="lastName" required />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-3">
+              <label for="city" class="form-label">Stad</label>
+              <input type="text" class="form-control" id="city" />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-3">
+              <label for="postalCode" class="form-label">Postnummer</label>
+              <input type="text" class="form-control" id="postalCode" />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-3">
+              <label for="address" class="form-label">Postadress</label>
+              <input type="text" class="form-control" id="address" />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-3">
+              <label for="phone" class="form-label">Telefonnummer</label>
+              <input type="tel" class="form-control" id="phone" />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-3">
+              <label for="email" class="form-label">E-post*</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-4">
+              <label for="confirmEmail" class="form-label"
+                >Bekräfta E-post*</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="confirmEmail"
+                required
+              />
+            </div>
+            <div class="col-sm-12 col-md-6 mb-4">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="terms"
+                  required
+                />
+                <label class="form-check-label" for="terms">
+                  Jag godkänner villkoren*
+                </label>
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-between">
+              <a href="index.html" class="btn btn-secondary">Avbryta</a>
+              <a href="index.html" class="btn btn-secondary"
+                >Skicka in formuläret</a
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="links">
+        <h4>Länkar</h4>
+        <!-- fungerar inte eftersom att vi inte de id:n på den här sidan -->
+        <div class="footer-links">
+          <ul>
+            <div class="linkGrid">
+              <div class="leftLinkColumn">
+                <li><a href="index.html#cont">Kontakta Oss</a></li>
+                <li><a href="index.html#newli">Nyheter</a></li>
+                <li><a href="index.html#tid">Öppettider</a></li>
+                <li><a href="index.html#cal">Kalender</a></li>
+              </div>
+              <div class="rightLinkColumn">
+                <li><a href="regi.html">Registrera dig</a></li>
+                <li><a href="books.html#addBook">Lägga till bok</a></li>
+                <li><a href="books.html">Alla böcker</a></li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="social">
+        <h4>Sociala Medier</h4>
+        <div class="social-list">
+          <ul>
+            <li>
+              <a href="https://twitter.com/?lang=sv" target="_blank"
+                ><img
+                  src="icons/x-social-media-white-icon.png"
+                  alt="twitter icon"
+                  title="Checka in vårt senaste X"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank"
+                ><img
+                  src="icons/facebook-app-round-white-icon.png"
+                  alt="facebok icon"
+                  title="Här kommer vår Facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank"
+                ><img
+                  src="icons/instagram-white-icon.png"
+                  alt="instagram icon"
+                  title="Här är vår sköna Instagram"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank"
+                ><img
+                  src="icons/linkedin-app-white-icon.png"
+                  alt="linkedin icon"
+                  title="Kolla in vår LinkedIn"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

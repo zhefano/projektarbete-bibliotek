@@ -1,0 +1,103 @@
+{
+  "books": [
+    {
+      "title": "Folk som sår i snö",
+      "author": "Tina Harnesk",
+      "year": 2022,
+      "genre": "Skönlitteratur",
+      "description": "Ingen ska komma och berätta för Máriddja när hon ska dö och ingen kan dra ur 85-åringen sanningen om cancerdiagnosen hon fått. Särskilt maken Biera måste hållas ovetande. Den enda hon kan anförtro sig åt är Siri, en växeltelefonist i den nya telefonapparatmaskinen som gubben skaffat bakom hennes rygg. Kajs mamma är död utan att ha yppat sin hemlighet. Kan Norrbotten ge Kaj en plats att slå rot och kommer Mimmi våga be honom om det hon längtar efter mer än allt? För sägnen säger att ingenting får kallas vid sitt rätta namn för då kan allt gå förlorat.",
+      "image": "https://s1.adlibris.com/images/67112812/folk-som-sar-i-sno.jpg",
+      "id": "fb40"
+    },
+    {
+      "title": "Robot",
+      "author": "Adam Wiśniewski-Snerg",
+      "year": 1973,
+      "genre": "Science Fiction",
+      "description": "Is BER-66 a human or a robot? His controllers, known as 'the Mechanism,' tell him he is a living machine, programmed to gather information on the inhabitants of the strange underground world he finds himself in. But as he penetrates its tunnels and locked rooms, encountering mysterious doppelgangers and a petrified city, he comes closer to the truth of his existence. Considered one of the most important Polish science fiction novels of all time, Robot is a haunting philosophical enquiry into the nature of our reality and our place in the universe.",
+      "image": "https://s2.adlibris.com/images/58885419/robot.jpg",
+      "id": "3148"
+    },
+    {
+      "title": "Hyper",
+      "author": "Agri Ismaïl",
+      "year": 2024,
+      "genre": "Skönlitteratur",
+      "description": "I skydd av natten flyr Rafiq Kermanj Teheran med sin fru Xezal och deras tre barn. Rafiq försöker bygga ett nytt liv åt sin familj i London, men förlamas av allt han har förlorat. I vuxen ålder går de tre syskonen skilda vägar. Äldste sonen Mohammed stannar i London och söker sig till den brutala finansbranschen. Siver, dottern i familjen, försvinner in i ett olyckligt äktenskap i Bagdad. Yngsta sonen Laika drar sig undan till en tillvaro helt levd online. Från en visningslägenhet vid Manhattans Wall Street utvecklar han tradingalgoritmer och försöker hacka systemet.",
+      "image": "https://s2.adlibris.com/images/68054520/hyper.jpg",
+      "id": "aab5"
+    },
+    {
+      "title": "A Million Little Pieces",
+      "author": "James Frey",
+      "year": 2003,
+      "genre": "Memoarer",
+      "description": "In 'A Million Little Pieces', James Frey tells his story of drug and alcohol abuse and rehabilitation. He brings readers face-to-face with a provocative, new understanding of the nature of addiction and the meaning of recovery.",
+      "image": "https://bilder.akademibokhandeln.se/images_akb/9780719561023_383/a-million-little-pieces",
+      "id": "1c8d"
+    },
+    {
+      "title": "Robinson Crusoe",
+      "author": "Daniel Defoe",
+      "year": 1719,
+      "genre": "Klassiker",
+      "description": "En spännande berättelse om sjömannen Robinson Crusoes inre och yttre kamp för överlevnad - totalt isolerad på en öde ö. Den unge Robinson var tidigt driven av en obetvinglig längtan att gå till sjöss. Han får uppleva många äventyrliga resor runt om i världen innan han under en våldsam storm lider det skeppsbrott som för honom som ensam överlevande till en öde ö i Karibien.",
+      "image": "https://image.bokus.com/images/9789174997187_200px_robinson-crusoe",
+      "id": "b05e"
+    },
+    {
+      "title": "The Left Hand of Darkness",
+      "author": "Ursula K. Le Guin",
+      "year": 1969,
+      "genre": "Science Fiction",
+      "description": "A groundbreaking work of science fiction, The Left Hand of Darkness tells the story of a lone human emissary to Winter, an alien world whose inhabitants spend most of their time without a gender. His goal is to facilitate Winter's inclusion in a growing intergalactic civilization. But to do so he must bridge the gulf between his own views and those of the completely dissimilar culture that he encounters.",
+      "image": "https://s1.adlibris.com/images/5274460/left-hand-of-darkness.jpg",
+      "id": "3c65"
+    },
+    {
+      "title": "Fågeln som vrider upp världen",
+      "author": "Haruki Murakami",
+      "year": 1995,
+      "genre": "Psykologisk Fiction",
+      "description": "Toru Okadas katt har försvunnit. Kort därefter försvinner även hans fru. Samtidigt börjar han få en rad anonyma sexsamtal på telefon, han blir kompis med en morbid med gladlynt grannflicka, träffar en kvinna som är uppkallad efter en ö i Medelhavet och lär känna en åldrad löjtnant från andra värlsdkriget. Efter en tid har Okadas ordnade Tokyo-tillvaro bytts mot total förvirring. För att återfå kontroll över situationen börjar han tillbringa alltmer av sin tid i en torrlagd brunn och det är tydligt att inget kommer att bli som det varit.",
+      "image": "https://s1.adlibris.com/images/66859452/fageln-som-vrider-upp-varlden.jpg",
+      "id": "0ce6"
+    },
+    {
+      "title": "An Astronaut's Guide to Life on Earth",
+      "author": "Chris Hadfield",
+      "year": 2013,
+      "genre": "Memoarer",
+      "description": "Colonel Chris Hadfield has spent decades training as an astronaut and has logged nearly 4000 hours in space. During this time he has broken into a Space Station with a Swiss army knife, disposed of a live snake while piloting a plane, and been temporarily blinded while clinging to the exterior of an orbiting spacecraft. The secret to Col. Hadfield's success-and survival-is an unconventional philosophy he learned at NASA: prepare for the worst-and enjoy every moment of it.",
+      "image": "https://image.bokus.com/images/9780316253031_383px_astronauts-guide-to-life-on-earth_haftad",
+      "id": "11dd"
+    },
+    {
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "year": 1945,
+      "genre": "Klassiker",
+      "description": "A farm is taken over by its overworked, mistreated animals. With flaming idealism and stirring slogans, they set out to create a paradise of progress, justice, and equality. Thus the stage is set for one of the most telling satiric fables ever penned –a razor-edged fairy tale for grown-ups that records the evolution from revolution against tyranny to a totalitarianism just as terrible.",
+      "image": "https://image.bokus.com/images/9780141036137_383px_animal-farm_haftad",
+      "id": "db74"
+    },
+    {
+      "title": "Samnang, tiggarpojken",
+      "author": "Staffan Nordstrand",
+      "year": 2013,
+      "genre": "Skönlitteratur",
+      "description": "För tiggarbarn i Phnom Penh är tillvaron hård. Ett barn är inte värt mycket, utom som inkomstmedel. Och när tiggarteamets ledare Aaron försöker sig på att exportera sin hårdhänt kuvade grupp på fem barn i sjuårsåldern från Kambodja till Thailand startar en kedja av händelser som får ödesdigra konsekvenser. För det är många som vill ha sin del av kakan, vare sig det gäller organiserat tiggeri, tvångsprostitution eller trafficking av barn.",
+      "image": "https://bilder.akademibokhandeln.se/images_akb/9789186505295_383/samnang-tiggarpojken",
+      "id": "52e0"
+    },
+    {
+      "id": "2b71",
+      "title": "Lida",
+      "author": "Stephen King",
+      "year": "1982",
+      "genre": "Klassiker",
+      "image": "https://dez1v4fbcawql.cloudfront.net/product/1380521/12962487/65845b6560751.jpg",
+      "description": "Läskig bok"
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>Mattisskogens Universitetsbibliotek</title>
+    <meta
+      name="description"
+      content="Mattisskogens universitetsbibliotek är världsledande i rumpnisse forskning"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-h1">
+        <img src="icons/book-open-icon.png" alt="logo icon" id="logo" />
+        <h1 class="title">Mattisskogens Universitetsbibliotek</h1>
+      </div>
+      <div class="head-icons">
+        <img
+          src="icons/search-icon.png"
+          alt="search icon "
+          class="search-icon"
+        />
+        <img
+          src="icons/three-horizontal-lines-icon.png"
+          class="hamb"
+          alt="hamburger icon"
+        />
+      </div>
+    </header>
+    <main class="gridContainer">
+      <div class="heroContainer">
+        <div class="searchContainer">
+          <article class="searchBox">
+            <h2 class="searchHeader">Sök</h2>
+            <form action="#" class="searchForm">
+              <button id="btn1">Böcker</button>
+              <button id="btn2">Artiklar</button>
+              <input
+                id="searchForm"
+                type="text"
+                placeholder="Sök efter titel, ISBN, författare eller kategori"
+              />
+            </form>
+          </article>
+        </div>
+      </div>
+      <section class="shortcutsContainer">
+        <h2 class="shortcutsHeader">Genvägar</h2>
+        <div class="shortcutsWrapper">
+          <div class="shortcuts">
+            <article class="shortcutCard">
+              <div class="shortcutTop"></div>
+              <a href="books.html" id="linkBooks">
+                <div class="shortcutContent">
+                  <h4>Se alla böcker</h4>
+                  <img
+                    src="./icons/thin-arrow-right-icon.png"
+                    alt="arrow"
+                    class="shortcutArrow"
+                  />
+                </div>
+              </a>
+            </article>
+            <article class="shortcutCard">
+              <div class="shortcutTop"></div>
+              
+              <div class="shortcutContent">
+                <h4>Boka grupprum</h4>
+                <img
+                  src="./icons/thin-arrow-right-icon.png"
+                  alt="arrow"
+                  class="shortcutArrow"
+                />
+              </div>
+            </article>
+            <article class="shortcutCard">
+              <div class="shortcutTop"></div>
+              <div class="shortcutContent">
+                <h4>FAQ</h4>
+                <img
+                  src="./icons/thin-arrow-right-icon.png"
+                  alt="arrow"
+                  class="shortcutArrow"
+                />
+              </div>
+            </article>
+            <article class="shortcutCard">
+              <div class="shortcutTop"></div>
+              <div class="shortcutContent">
+                <h4>Utbildning & Forskning</h4>
+                <img
+                  src="./icons/thin-arrow-right-icon.png"
+                  alt="arrow"
+                  class="shortcutArrow"
+                />
+              </div>
+            </article>
+            <article class="shortcutCard">
+              <div class="shortcutTop"></div>
+              <div class="shortcutContent">
+                <h4>Sök handledning</h4>
+                <img
+                  src="./icons/thin-arrow-right-icon.png"
+                  alt="arrow"
+                  class="shortcutArrow"
+                />
+              </div>
+            </article>
+            <article class="shortcutCard">
+              <div class="shortcutTop"></div>
+              <div class="shortcutContent">
+                <h4>Jobba hos oss</h4>
+                <img
+                  src="./icons/thin-arrow-right-icon.png"
+                  alt="arrow"
+                  class="shortcutArrow"
+                />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <div class="frequentCalendarWrapper">
+        <div class="frequentContainer" id="tid">
+          <article class="hours">
+            <h2 class="hoursHeader" id="houHead">Våra öppettider</h2>
+            <div class="openContainer">
+              <div class="open">Mån-tors: 07.00 - 18.00</div>
+              <div class="open">Fredag: 08.00 - 17.00</div>
+              <div class="open">Lördag: 08.30 - 17.00</div>
+              <div class="open">Söndag: 09.00 - 16.00</div>
+            </div>
+          </article>
+          <article class="login">
+            <h2 class="loginHeader" id="logHead">Användarkonto</h2>
+            <div class="loginWrapper">
+              <form action="#">
+                <input
+                  type="email"
+                  name="E-post"
+                  id="E-post"
+                  placeholder="Din E-post"
+                  required
+                />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="*********"
+                  required
+                />
+              </form>
+              <div class="loginButtons">
+                <button id="loginButton">Logga in</button>
+                <a
+                  id="registreraButton"
+                  href="regi.html"
+                  title="Klicka här för att registrera dig"
+                  >Registrera dig</a
+                >
+              </div>
+              <a id="forgotPass" href="#">Glömt ditt lösenord?</a>
+            </div>
+          </article>
+        </div>
+        <section class="calendarContainer" id="cal">
+          <h2 class="calendarHeader">Kalender</h2>
+          <div class="calendarEvents">
+            <article class="calendarEvent">
+              <div class="calendarTitle">
+                <h3>Sökhandledning drop-in på Teams</h3>
+                <div class="calendarTimePlace">
+                  <div class="calendarTime">
+                    <img src="icons/time-clock-icon.png" alt="Tid ikon" />
+                    <p>09.00 - 13.00</p>
+                  </div>
+                  <div class="calendarPlace">
+                    <img src="icons/maps-pin-black-icon.png" alt="Plats ikon" />
+                    <p>Digitalt via Teams</p>
+                  </div>
+                </div>
+              </div>
+              <div class="calendarDate">
+                <p class="pDate">Idag</p>
+                <p class="pDateNumber">24</p>
+                <p class="pDate">April</p>
+              </div>
+              <div class="calendarInfo">
+                <h4>Föreläsning</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  magni laborum architecto id dolorem ratione ad atque neque
+                  doloribus incidunt?
+                </p>
+              </div>
+            </article>
+            <article class="calendarEvent">
+              <div class="calendarTitle">
+                <h3>Sök och skrivverkstad</h3>
+                <div class="calendarTimePlace">
+                  <div class="calendarTime">
+                    <img src="icons/time-clock-icon.png" alt="Tid ikon" />
+                    <p>13.00 - 15.00</p>
+                  </div>
+                  <div class="calendarPlace">
+                    <img src="icons/maps-pin-black-icon.png" alt="Plats ikon" />
+                    <p>Grupprum 2, Univeritetsbiblioteket</p>
+                  </div>
+                </div>
+              </div>
+              <div class="calendarDate">
+                <p class="pDate">Fre</p>
+                <p class="pDateNumber">26</p>
+                <p class="pDate">April</p>
+              </div>
+              <div class="calendarInfo">
+                <h4>Workshop</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  magni laborum architecto id dolorem ratione ad atque neque
+                  doloribus incidunt?
+                </p>
+              </div>
+            </article>
+            <article class="calendarEvent">
+              <div class="calendarTitle">
+                <h3>Styr upp din tid och dina studier</h3>
+                <div class="calendarTimePlace">
+                  <div class="calendarTime">
+                    <img src="icons/time-clock-icon.png" alt="Tid ikon" />
+                    <p>11.00 - 13.00</p>
+                  </div>
+                  <div class="calendarPlace">
+                    <img src="icons/maps-pin-black-icon.png" alt="Plats ikon" />
+                    <p>Digitalt via Teams</p>
+                  </div>
+                </div>
+              </div>
+              <div class="calendarDate">
+                <p class="pDate">Mån</p>
+                <p class="pDateNumber">29</p>
+                <p class="pDate">April</p>
+              </div>
+              <div class="calendarInfo">
+                <h4>Föreläsning</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  magni laborum architecto id dolorem ratione ad atque neque
+                  doloribus incidunt?
+                </p>
+              </div>
+            </article>
+          </div>
+          <button class="calendarBtn">
+            Se hela kalendern<img
+              src="icons/thin-arrow-right-icon.png"
+              alt="Högerpil ikon"
+            />
+          </button>
+        </section>
+      </div>
+      <section class="newsContainer" id="newli">
+        <h2 class="newsHeader">Nyheter</h2>
+        <div class="news">
+          <article class="newsCard">
+            <div class="newsContent">
+              <div class="newsHeading">
+                <h3>Nya telefontider i vår</h3>
+                <h4>22 apr, Universitet</h4>
+              </div>
+              <div class="newsInfoDesktop">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+                  obcaecati voluptates eveniet perspiciatis saepe cumque minima
+                  consequatur, error doloremque quam rerum aperiam repellat,
+                  suscipit porro.
+                </p>
+              </div>
+            </div>
+            <img
+              src="./images/telephone.jpg"
+              alt="a red telephone"
+              class="newsImage"
+            />
+            <div class="newsInfo">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+                obcaecati voluptates eveniet perspiciatis saepe cumque minima
+                consequatur, error doloremque quam rerum aperiam repellat,
+                suscipit porro.
+              </p>
+            </div>
+          </article>
+          <article class="newsCard">
+            <div class="newsContent">
+              <div class="newsHeading">
+                <h3>Renovering av grupprum på våning 2</h3>
+                <h4>17 apr, Universitet</h4>
+              </div>
+              <div class="newsInfoDesktop">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. A
+                  recusandae dicta repudiandae deserunt vero ea dolorem quod
+                  aliquam debitis aliquid omnis iusto beatae, necessitatibus
+                  minus.
+                </p>
+              </div>
+            </div>
+            <img
+              src="./images/grupprum.png"
+              alt="a red telephone"
+              class="newsImage"
+            />
+            <div class="newsInfo">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
+                iure facere. Reiciendis, hic quidem perferendis minus atque quis
+                repudiandae deleniti odio fuga nulla voluptas culpa.
+              </p>
+            </div>
+          </article>
+          <article class="newsCard">
+            <div class="newsContent">
+              <div class="newsHeading">
+                <h3>Lär dig skriva akademiskt</h3>
+                <h4>16 apr, Studievägledningen</h4>
+              </div>
+              <div class="newsInfoDesktop">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Tempore similique provident fuga dicta iste esse, dolore,
+                  veniam aperiam nihil, ullam quia possimus sapiente quod ipsum.
+                </p>
+              </div>
+            </div>
+            <img
+              src="./images/lecture.jpg"
+              alt="a red telephone"
+              class="newsImage"
+            />
+            <div class="newsInfo">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Tempore similique provident fuga dicta iste esse, dolore, veniam
+                aperiam nihil, ullam quia possimus sapiente quod ipsum.
+              </p>
+            </div>
+          </article>
+        </div>
+        <button class="newsBtn">
+          Läs alla nyheter
+          <img src="icons/thin-arrow-right-icon.png" alt="Högerpil ikon" />
+        </button>
+      </section>
+      <section class="contactContainer" id="cont">
+        <h2 class="contactHeader">Kontakta oss</h2>
+        <div class="contactCards">
+          <article class="contactCard" id="cc1">
+            <div class="contactCardHeader">
+              <h3>Kontakta biblioteket</h3>
+              <img
+                src="./icons/thin-arrow-right-icon.png"
+                alt="arrow"
+                class="contactArrow"
+              />
+            </div>
+            <p class="contactInfo">
+              Lite info om hur man kan kontakta biblioteket
+            </p>
+          </article>
+          <article class="contactCard" id="cc2">
+            <div class="contactCardHeader">
+              <h3>Chatta med oss</h3>
+              <img
+                src="./icons/thin-arrow-right-icon.png"
+                alt="arrow"
+                class="contactArrow"
+              />
+            </div>
+            <p>Chatten är öppen xx-xx vardagar</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="links">
+        <h4>Länkar</h4>
+        <!-- fungerar inte eftersom att vi inte de id:n på den här sidan -->
+        <div class="footer-links">
+          <ul>
+            <div class="linkGrid">
+              <div class="leftLinkColumn">
+                <li><a href="#cont">Kontakta Oss</a></li>
+                <li><a href="#newli">Nyheter</a></li>
+                <li><a href="#tid">Öppettider</a></li>
+                <li><a href="#cal">Kalender</a></li>
+              </div>
+              <div class="rightLinkColumn">
+                <li><a href="regi.html">Registrera dig</a></li>
+                <li><a href="books.html#addBook">Lägga till bok</a></li>
+                <li><a href="books.html">Alla böcker</a></li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="social">
+        <h4>Sociala Medier</h4>
+        <div class="social-list">
+          <ul>
+            <li>
+              <a href="https://twitter.com/?lang=sv" target="_blank"
+                ><img
+                  src="icons/x-social-media-white-icon.png"
+                  alt="twitter icon"
+                  title="Checka in vårt senaste X"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank"
+                ><img
+                  src="icons/facebook-app-round-white-icon.png"
+                  alt="facebok icon"
+                  title="Här kommer vår Facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank"
+                ><img
+                  src="icons/instagram-white-icon.png"
+                  alt="instagram icon"
+                  title="Här är vår sköna Instagram"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank"
+                ><img
+                  src="icons/linkedin-app-white-icon.png"
+                  alt="linkedin icon"
+                  title="Kolla in vår LinkedIn"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

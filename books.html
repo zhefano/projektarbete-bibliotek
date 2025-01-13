@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="books.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+ 
+      <div class="logo-h1">
+        <a href="index.html"
+          ><img src="icons/book-open-icon.png" alt="logo icon" id="logo"
+        /></a>
+        <a href="index.html" id="homeLink">
+          <h1 class="title">Mattisskogens Universitetsbibliotek</h1>
+        </a>
+      </div>
+      <div class="head-icons">
+        <img
+          src="icons/search-icon.png"
+          alt="search icon "
+          class="search-icon"
+        />
+        <img
+          src="icons/three-horizontal-lines-icon.png"
+          class="hamb"
+          alt="hamburger icon"
+        />
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Startsida</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div id="overlay">
+        <!-- Overlay hanteras genom js, ska vara tom -->
+      </div>
+      <div class="heroContainer">
+        <div class="searchContainer">
+          <article class="searchBox">
+            <h2 class="searchHeader">Sök</h2>
+            <form action="#" class="searchForm">
+              <button id="btn1">Böcker</button>
+              <button id="btn2">Artiklar</button>
+              <input
+                type="text"
+                id="searchForm"
+                placeholder="Sök efter titel, ISBN, författare eller kategori"
+              />
+            </form>
+          </article>
+        </div>
+      </div>
+
+      <section class="bookContainer" id="bookli">
+        <h2 class="bookHeader">Böcker</h2>
+        <div class="sortButtonsContainer">
+          <p id="sortHeader">Sortera efter:</p>
+          <button
+            class="sortBtn"
+            id="sortByGenreBtn"
+            onclick="sort('genre')"
+          >
+            Genre
+          </button>
+          <button class="sortBtn" id="sortByAuthorBtn" onclick="sort('author')">
+            Författare
+          </button>
+          <button class="sortBtn" id="sortByYearBtn" onclick="sort('year')">
+            Utgivningsår
+          </button>
+        </div>
+        <div class="book" id="books">
+          <!-- Böckerna laddas in genom att läsa data.json -->
+        </div>
+      </section>
+
+      <section class="addBookContainer">
+        <div class="addBookWrapper">
+          <h2>Lägg till en bok</h2>
+          <div class="addBookFormWrapper">
+            <div class="addBookImg">
+              <img src="./images/bookPile.jpg" alt="a red telephone" />
+            </div>
+            <div class="addBookForm">
+              <form action="" id="addBook">
+                <div class="titleAuthorWrapper">
+                  <div>
+                    <label for="title">Titel</label>
+                    <input
+                      type="text"
+                      id="title"
+                      name="title"
+                      placeholder="Titel"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="author">Författare</label>
+                    <input
+                      type="text"
+                      id="author"
+                      name="author"
+                      placeholder="Författare"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="yearGenreWrapper">
+                  <div>
+                    <label for="year">Publiceringsår</label>
+
+                    <input
+                      type="number"
+                      id="year"
+                      name="year"
+                      placeholder="År"
+                      min="0"
+                      max="2024"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="genre">Genre</label>
+                    <br />
+                    <select id="genre" name="genre">
+                      <option></option>
+                      <option value="Skönlitteratur">Skönlitteratur</option>
+                      <option value="Science Fiction">Science Fiction</option>
+                      <option value="Memoarer">Memoarer</option>
+                      <option value="Klassiker">Klassiker</option>
+                      <option value="Psykologisk Fiction">
+                        Psykologisk Fiction
+                      </option>
+                      <option value="Annat">Annat</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label for="image">URL-länk till omslag</label>
+                  <input
+                    type="url"
+                    id="image"
+                    name="image"
+                    placeholder="https://example.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="description">Beskrivning</label>
+                  <input
+                    type="text"
+                    id="description"
+                    name="description"
+                    placeholder="Här kan du skriva en beskrivning av boken."
+                  />
+                </div>
+                <div class="submitBtnWrapper">
+                  <button id="submit">Lägg till</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="links">
+        <h4>Länkar</h4>
+        <!-- fungerar inte eftersom att vi inte de id:n på den här sidan -->
+        <div class="footer-links">
+          <ul>
+            <div class="linkGrid">
+              <div class="leftLinkColumn">
+                <li><a href="#cont">Kontakta Oss</a></li>
+                <li><a href="#newli">Nyheter</a></li>
+                <li><a href="#tid">Öppettider</a></li>
+                <li><a href="#cal">Kalender</a></li>
+              </div>
+              <div class="rightLinkColumn">
+                <li><a href="regi.html">Registrera dig</a></li>
+                <li><a href="books.html#addBook">Lägga till bok</a></li>
+                <li><a href="books.html">Alla böcker</a></li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="social">
+        <h4>Sociala Medier</h4>
+        <div class="social-list">
+          <ul>
+            <li>
+              <a href="https://twitter.com/?lang=sv" target="_blank"
+                ><img
+                  src="icons/x-social-media-white-icon.png"
+                  alt="twitter icon"
+                  title="Checka in vårt senaste X"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank"
+                ><img
+                  src="icons/facebook-app-round-white-icon.png"
+                  alt="facebok icon"
+                  title="Här kommer vår Facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank"
+                ><img
+                  src="icons/instagram-white-icon.png"
+                  alt="instagram icon"
+                  title="Här är vår sköna Instagram"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank"
+                ><img
+                  src="icons/linkedin-app-white-icon.png"
+                  alt="linkedin icon"
+                  title="Kolla in vår LinkedIn"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
