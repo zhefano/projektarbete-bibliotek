@@ -4,25 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <title>Mattisskogens Universitetsbibliotek</title>
+    <title>Mattisskogens Universitetsbibliotek - Framtidens Kunskapsportal</title>
     <meta
       name="description"
-      content="Mattisskogens universitetsbibliotek - Din portal till kunskap och forskning. Upptäck vårt omfattande utbud av böcker, digitala resurser och tjänster."
+      content="Upptäck framtidens bibliotek. Mattisskogens universitetsbibliotek erbjuder en användarvänlig digital upplevelse för forskning och lärande."
     />
-    <meta name="keywords" content="bibliotek, universitet, böcker, forskning, studier, Mattisskogens" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mattisskogens-library.com/" />
-    <meta property="og:title" content="Mattisskogens Universitetsbibliotek" />
-    <meta property="og:description" content="Din portal till kunskap och forskning" />
     
     <!-- Preload critical resources -->
     <link rel="preload" href="./images/heroBW.jpg" as="image" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" as="style" />
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css" />
@@ -31,524 +24,386 @@
     <link rel="icon" type="image/png" href="icons/book-open-icon.png" />
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-content">
+        <div class="loading-logo">
+          📚
+        </div>
+        <div class="loading-text">Laddar biblioteket...</div>
+        <div class="loading-progress">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
     
-    <header>
+    <!-- Header -->
+    <header class="header" id="header">
       <div class="header-content">
-        <a href="index.html" class="logo-h1" aria-label="Mattisskogens Universitetsbibliotek - Startsida">
-          <img src="icons/book-open-icon.png" alt="" width="48" height="48" />
-          <h1 class="title">Mattisskogens Universitetsbibliotek</h1>
+        <a href="index.html" class="logo-container">
+          <div class="logo">MU</div>
+          <div>
+            <h1 class="site-title">Mattisskogens Universitetsbibliotek</h1>
+            <p class="site-subtitle">Framtidens kunskapsportal</p>
+          </div>
         </a>
-        <div class="head-icons">
-          <button type="button" aria-label="Sök" class="search-icon">
-            <img src="icons/search-icon.png" alt="" width="32" height="32" />
+        
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Hem</a></li>
+            <li><a href="books.html" class="nav-link">Böcker</a></li>
+            <li><a href="#services" class="nav-link">Tjänster</a></li>
+            <li><a href="#timeline" class="nav-link">Öppettider</a></li>
+            <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            <li><a href="regi.html" class="nav-link">Registrera</a></li>
+          </ul>
+          
+          <button class="search-button" id="search-button" aria-label="Öppna sök">
+            🔍
           </button>
-          <button type="button" aria-label="Meny" class="hamb">
-            <img src="icons/three-horizontal-lines-icon.png" alt="" width="32" height="32" />
+          
+          <button class="menu-button" id="menu-button" aria-label="Öppna meny">
+            ☰
           </button>
-        </div>
+        </nav>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-nav-links">
+          <li><a href="#home">Hem</a></li>
+          <li><a href="books.html">Böcker</a></li>
+          <li><a href="#services">Tjänster</a></li>
+          <li><a href="#timeline">Öppettider</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+          <li><a href="regi.html">Registrera</a></li>
+        </ul>
       </div>
     </header>
 
-    <nav role="navigation" aria-label="Huvudnavigation">
-      <ul>
-        <li><a href="index.html" aria-current="page">Startsida</a></li>
-        <li><a href="books.html">Böcker</a></li>
-        <li><a href="regi.html">Registrera dig</a></li>
-      </ul>
-    </nav>
-
-    <main id="main-content" class="gridContainer">
-      <section class="heroContainer" aria-labelledby="search-heading">
-        <div class="searchContainer">
-          <div class="searchBox">
-            <h2 id="search-heading" class="searchHeader">Sök i våra samlingar</h2>
-            <form action="#" class="searchForm" role="search">
-              <button type="button" id="btn1" aria-pressed="true">Böcker</button>
-              <button type="button" id="btn2" aria-pressed="false">Artiklar</button>
-              <label for="searchForm" class="sr-only">Sökfält</label>
-              <input
-                id="searchForm"
-                type="search"
-                placeholder="Sök efter titel, ISBN, författare eller kategori"
-                aria-describedby="search-help"
-              />
-              <div id="search-help" class="sr-only">
-                Skriv in söktermer för att hitta böcker och artiklar i vårt bibliotek
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <section class="shortcutsContainer fade-in" aria-labelledby="shortcuts-heading">
-        <h2 id="shortcuts-heading" class="shortcutsHeader">Snabblänkar</h2>
-        <div class="shortcuts">
-          <article class="shortcutCard">
-            <a href="books.html" id="linkBooks" aria-describedby="books-desc">
-              <div class="shortcutContent">
-                <h3>Se alla böcker</h3>
-                <img
-                  src="./icons/thin-arrow-right-icon.png"
-                  alt=""
-                  class="shortcutArrow"
-                  width="24"
-                  height="24"
-                />
-              </div>
-            </a>
-            <div id="books-desc" class="sr-only">Bläddra i vårt fullständiga bokutbud</div>
-          </article>
-          
-          <article class="shortcutCard">
-            <div class="shortcutContent">
-              <h3>Boka grupprum</h3>
-              <img
-                src="./icons/thin-arrow-right-icon.png"
-                alt=""
-                class="shortcutArrow"
-                width="24"
-                height="24"
-              />
-            </div>
-          </article>
-          
-          <article class="shortcutCard">
-            <div class="shortcutContent">
-              <h3>FAQ</h3>
-              <img
-                src="./icons/thin-arrow-right-icon.png"
-                alt=""
-                class="shortcutArrow"
-                width="24"
-                height="24"
-              />
-            </div>
-          </article>
-          
-          <article class="shortcutCard">
-            <div class="shortcutContent">
-              <h3>Utbildning & Forskning</h3>
-              <img
-                src="./icons/thin-arrow-right-icon.png"
-                alt=""
-                class="shortcutArrow"
-                width="24"
-                height="24"
-              />
-            </div>
-          </article>
-          
-          <article class="shortcutCard">
-            <div class="shortcutContent">
-              <h3>Sökhandledning</h3>
-              <img
-                src="./icons/thin-arrow-right-icon.png"
-                alt=""
-                class="shortcutArrow"
-                width="24"
-                height="24"
-              />
-            </div>
-          </article>
-          
-          <article class="shortcutCard">
-            <div class="shortcutContent">
-              <h3>Jobba hos oss</h3>
-              <img
-                src="./icons/thin-arrow-right-icon.png"
-                alt=""
-                class="shortcutArrow"
-                width="24"
-                height="24"
-              />
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <div class="frequentCalendarWrapper">
-        <div class="frequentContainer slide-in-left">
-          <article class="hours" id="tid">
-            <h2 class="hoursHeader">Våra öppettider</h2>
-            <div class="openContainer">
-              <div class="open">Måndag - Torsdag: 07:00 - 18:00</div>
-              <div class="open">Fredag: 08:00 - 17:00</div>
-              <div class="open">Lördag: 08:30 - 17:00</div>
-              <div class="open">Söndag: 09:00 - 16:00</div>
-            </div>
-          </article>
-          
-          <article class="login">
-            <h2 class="loginHeader">Användarkonto</h2>
-            <div class="loginWrapper">
-              <form action="#" novalidate>
-                <label for="email" class="sr-only">E-postadress</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Din e-postadress"
-                  required
-                  autocomplete="email"
-                />
-                <label for="password" class="sr-only">Lösenord</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Ditt lösenord"
-                  required
-                  autocomplete="current-password"
-                />
-              </form>
-              <div class="loginButtons">
-                <button type="submit" id="loginButton">Logga in</button>
-                <a
-                  id="registreraButton"
-                  href="regi.html"
-                  role="button"
-                  aria-describedby="register-desc"
-                >
-                  Registrera dig
-                </a>
-              </div>
-              <div id="register-desc" class="sr-only">Skapa ett nytt konto för att få tillgång till alla tjänster</div>
-              <a id="forgotPass" href="#" aria-describedby="forgot-desc">Glömt ditt lösenord?</a>
-              <div id="forgot-desc" class="sr-only">Återställ ditt lösenord via e-post</div>
-            </div>
-          </article>
-        </div>
-
-        <section class="calendarContainer slide-in-right" id="cal" aria-labelledby="calendar-heading">
-          <h2 id="calendar-heading" class="calendarHeader">Kommande evenemang</h2>
-          <div class="calendarEvents">
-            <article class="calendarEvent">
-              <div class="calendarDate">
-                <p class="pDate">Idag</p>
-                <p class="pDateNumber">24</p>
-                <p class="pDate">April</p>
-              </div>
-              <div class="calendarTitle">
-                <h3>Sökhandledning drop-in på Teams</h3>
-                <div class="calendarTimePlace">
-                  <div class="calendarTime">
-                    <img src="icons/time-clock-icon.png" alt="" width="16" height="16" />
-                    <p>09:00 - 13:00</p>
-                  </div>
-                  <div class="calendarPlace">
-                    <img src="icons/maps-pin-black-icon.png" alt="" width="16" height="16" />
-                    <p>Digitalt via Teams</p>
-                  </div>
-                </div>
-              </div>
-              <div class="calendarInfo">
-                <h4>Föreläsning</h4>
-                <p>
-                  Få hjälp med dina sökningar i våra databaser. Våra bibliotekarier 
-                  hjälper dig att hitta rätt information för dina studier.
-                </p>
-              </div>
-            </article>
-            
-            <article class="calendarEvent">
-              <div class="calendarDate">
-                <p class="pDate">Fre</p>
-                <p class="pDateNumber">26</p>
-                <p class="pDate">April</p>
-              </div>
-              <div class="calendarTitle">
-                <h3>Sök och skrivverkstad</h3>
-                <div class="calendarTimePlace">
-                  <div class="calendarTime">
-                    <img src="icons/time-clock-icon.png" alt="" width="16" height="16" />
-                    <p>13:00 - 15:00</p>
-                  </div>
-                  <div class="calendarPlace">
-                    <img src="icons/maps-pin-black-icon.png" alt="" width="16" height="16" />
-                    <p>Grupprum 2, Universitetsbiblioteket</p>
-                  </div>
-                </div>
-              </div>
-              <div class="calendarInfo">
-                <h4>Workshop</h4>
-                <p>
-                  Lär dig effektiva söktekniker och hur du skriver akademiska texter. 
-                  Perfekt för studenter på alla nivåer.
-                </p>
-              </div>
-            </article>
-            
-            <article class="calendarEvent">
-              <div class="calendarDate">
-                <p class="pDate">Mån</p>
-                <p class="pDateNumber">29</p>
-                <p class="pDate">April</p>
-              </div>
-              <div class="calendarTitle">
-                <h3>Styr upp din tid och dina studier</h3>
-                <div class="calendarTimePlace">
-                  <div class="calendarTime">
-                    <img src="icons/time-clock-icon.png" alt="" width="16" height="16" />
-                    <p>11:00 - 13:00</p>
-                  </div>
-                  <div class="calendarPlace">
-                    <img src="icons/maps-pin-black-icon.png" alt="" width="16" height="16" />
-                    <p>Digitalt via Teams</p>
-                  </div>
-                </div>
-              </div>
-              <div class="calendarInfo">
-                <h4>Föreläsning</h4>
-                <p>
-                  Få tips och verktyg för bättre tidsplanering och studieteknik. 
-                  Öppet för alla studenter.
-                </p>
-              </div>
-            </article>
-          </div>
-          <button class="calendarBtn" aria-describedby="calendar-btn-desc">
-            Se hela kalendern
-            <img src="icons/thin-arrow-right-icon.png" alt="" width="16" height="16" />
-          </button>
-          <div id="calendar-btn-desc" class="sr-only">Visa alla kommande evenemang och aktiviteter</div>
-        </section>
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+      <div class="search-container">
+        <button class="search-close" id="search-close" aria-label="Stäng sök">×</button>
+        <h2 class="search-title">Sök i biblioteket</h2>
+        <input 
+          type="text" 
+          class="search-input" 
+          placeholder="Sök efter böcker, artiklar eller författare..." 
+          id="search-input"
+          aria-label="Sökfält"
+        />
       </div>
+    </div>
 
-      <section class="newsContainer fade-in" id="newli" aria-labelledby="news-heading">
-        <h2 id="news-heading" class="newsHeader">Aktuella nyheter</h2>
-        <div class="news">
-          <article class="newsCard">
-            <img
-              src="./images/telephone.jpg"
-              alt="Röd telefon på skrivbord"
-              class="newsImage"
-              width="300"
-              height="200"
-              loading="lazy"
-            />
-            <div class="newsContent">
-              <div class="newsHeading">
-                <h3>Nya telefontider under våren</h3>
-                <h4>22 april, Universitetsbiblioteket</h4>
-              </div>
-              <div class="newsInfoDesktop">
-                <p>
-                  Vi utökar våra telefontider för att bättre kunna hjälpa er med 
-                  frågor och support. Från och med nästa vecka är vi tillgängliga 
-                  även på kvällstid.
-                </p>
-              </div>
-              <div class="newsInfo">
-                <p>
-                  Vi utökar våra telefontider för att bättre kunna hjälpa er med 
-                  frågor och support.
-                </p>
-              </div>
-            </div>
-          </article>
-          
-          <article class="newsCard">
-            <img
-              src="./images/grupprum.png"
-              alt="Modernt grupprum med bord och stolar"
-              class="newsImage"
-              width="300"
-              height="200"
-              loading="lazy"
-            />
-            <div class="newsContent">
-              <div class="newsHeading">
-                <h3>Renovering av grupprum på våning 2</h3>
-                <h4>17 april, Universitetsbiblioteket</h4>
-              </div>
-              <div class="newsInfoDesktop">
-                <p>
-                  Grupprummen på våning 2 genomgår en omfattande renovering med 
-                  ny teknik och möbler. Rummen kommer att vara ännu bättre anpassade 
-                  för moderna studieformer.
-                </p>
-              </div>
-              <div class="newsInfo">
-                <p>
-                  Grupprummen på våning 2 renoveras med ny teknik och möbler för 
-                  bättre studiemiljö.
-                </p>
-              </div>
-            </div>
-          </article>
-          
-          <article class="newsCard">
-            <img
-              src="./images/lecture.jpg"
-              alt="Föreläsningssal med studenter"
-              class="newsImage"
-              width="300"
-              height="200"
-              loading="lazy"
-            />
-            <div class="newsContent">
-              <div class="newsHeading">
-                <h3>Lär dig skriva akademiskt</h3>
-                <h4>16 april, Studievägledningen</h4>
-              </div>
-              <div class="newsInfoDesktop">
-                <p>
-                  Ny workshop-serie om akademiskt skrivande startar nästa månad. 
-                  Perfekt för dig som vill förbättra dina uppsatser och rapporter. 
-                  Anmälan öppnar snart.
-                </p>
-              </div>
-              <div class="newsInfo">
-                <p>
-                  Ny workshop-serie om akademiskt skrivande startar nästa månad. 
-                  Anmälan öppnar snart.
-                </p>
-              </div>
-            </div>
-          </article>
+    <main id="main-content" class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section" id="home">
+        <div class="hero-container">
+          <h2 class="hero-title">Upptäck Kunskapens Universum</h2>
+          <p class="hero-subtitle">
+            En modern digital upplevelse som förenar traditionell bibliotekskunskap 
+            med framtidens teknologi. Utforska, lär och upptäck på ett enkelt sätt.
+          </p>
+          <div class="hero-actions">
+            <a href="books.html" class="btn btn-primary">
+              <span>Börja Utforska</span>
+              <span>→</span>
+            </a>
+            <a href="#services" class="btn btn-secondary">
+              <span>Lär Dig Mer</span>
+            </a>
+          </div>
         </div>
-        <button class="newsBtn" aria-describedby="news-btn-desc">
-          Läs alla nyheter
-          <img src="icons/thin-arrow-right-icon.png" alt="" width="16" height="16" />
-        </button>
-        <div id="news-btn-desc" class="sr-only">Visa alla nyheter och uppdateringar från biblioteket</div>
       </section>
 
-      <section class="contactContainer fade-in" id="cont" aria-labelledby="contact-heading">
-        <h2 id="contact-heading" class="contactHeader">Kontakta oss</h2>
-        <div class="contactCards">
-          <article class="contactCard" tabindex="0" role="button" aria-describedby="contact-library-desc">
-            <div class="contactCardHeader">
-              <h3>Kontakta biblioteket</h3>
-              <img
-                src="./icons/thin-arrow-right-icon.png"
-                alt=""
-                class="contactArrow"
-                width="20"
-                height="20"
-              />
-            </div>
-            <p>
-              Ring oss på 08-123 456 78 eller skicka e-post till info@mattisskogens.se. 
-              Vi hjälper dig gärna med alla dina frågor.
-            </p>
-            <div id="contact-library-desc" class="sr-only">
-              Kontaktinformation för allmänna frågor till biblioteket
-            </div>
-          </article>
+      <!-- Services Section -->
+      <section class="section" id="services">
+        <div class="section-container">
+          <div class="section-header">
+            <h2 class="section-title">Våra Tjänster</h2>
+            <p class="section-subtitle">Allt du behöver för dina studier och forskning</p>
+          </div>
           
-          <article class="contactCard" tabindex="0" role="button" aria-describedby="chat-desc">
-            <div class="contactCardHeader">
-              <h3>Chatta med oss</h3>
-              <img
-                src="./icons/thin-arrow-right-icon.png"
-                alt=""
-                class="contactArrow"
-                width="20"
-                height="20"
-              />
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">📚</div>
+              <h3 class="service-title">Digitala Samlingar</h3>
+              <p class="service-description">Tillgång till miljontals böcker, artiklar och forskningspublikationer</p>
+              <div class="service-stats">
+                <span class="stat">2.5M+ böcker</span>
+                <span class="stat">500K+ artiklar</span>
+              </div>
             </div>
-            <p>
-              Vår chattfunktion är öppen måndag-fredag 09:00-17:00. 
-              Få snabba svar på dina frågor direkt online.
-            </p>
-            <div id="chat-desc" class="sr-only">
-              Livechatt för direktsupport under kontorstid
+            
+            <div class="service-card">
+              <div class="service-icon">🔬</div>
+              <h3 class="service-title">Forskningsstöd</h3>
+              <p class="service-description">Experthjälp med forskningsmetoder och akademiskt skrivande</p>
+              <div class="service-stats">
+                <span class="stat">24/7 support</span>
+                <span class="stat">Expert rådgivning</span>
+              </div>
             </div>
-          </article>
+            
+            <div class="service-card">
+              <div class="service-icon">🏢</div>
+              <h3 class="service-title">Studiemiljöer</h3>
+              <p class="service-description">Moderna grupprum och tysta studieytor för alla behov</p>
+              <div class="service-stats">
+                <span class="stat">50+ rum</span>
+                <span class="stat">Online bokning</span>
+              </div>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon">💻</div>
+              <h3 class="service-title">Digital Teknik</h3>
+              <p class="service-description">Moderna verktyg och avancerade sökfunktioner</p>
+              <div class="service-stats">
+                <span class="stat">AI-sökning</span>
+                <span class="stat">Mobil app</span>
+              </div>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon">🎓</div>
+              <h3 class="service-title">Evenemang</h3>
+              <p class="service-description">Workshops, föreläsningar och akademiska konferenser</p>
+              <div class="service-stats">
+                <span class="stat">100+ events/år</span>
+                <span class="stat">Expert speakers</span>
+              </div>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon">🤝</div>
+              <h3 class="service-title">Community</h3>
+              <p class="service-description">Anslut med forskare och studenter från hela världen</p>
+              <div class="service-stats">
+                <span class="stat">Global nätverk</span>
+                <span class="stat">Samarbeten</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="section timeline-section" id="timeline">
+        <div class="section-container">
+          <div class="section-header">
+            <h2 class="section-title">Öppettider & Schema</h2>
+            <p class="section-subtitle">Vi är här när du behöver oss</p>
+          </div>
+          
+          <div class="timeline-nav">
+            <button class="timeline-btn active" data-day="today">Idag</button>
+            <button class="timeline-btn" data-day="week">Denna vecka</button>
+            <button class="timeline-btn" data-day="month">Denna månad</button>
+          </div>
+          
+          <div class="timeline-content">
+            <div class="timeline-item">
+              <div class="timeline-time">09:00</div>
+              <h4 class="timeline-title">Biblioteket öppnar</h4>
+              <p class="timeline-description">Alla avdelningar tillgängliga</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-time">10:00</div>
+              <h4 class="timeline-title">Forskningshandledning</h4>
+              <p class="timeline-description">Drop-in session med våra experter</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-time">14:00</div>
+              <h4 class="timeline-title">Studiegrupper</h4>
+              <p class="timeline-description">Organiserade studiegrupper för olika ämnen</p>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-time">18:00</div>
+              <h4 class="timeline-title">Biblioteket stänger</h4>
+              <p class="timeline-description">Digital tillgång 24/7</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- News Section -->
+      <section class="section" id="news">
+        <div class="section-container">
+          <div class="section-header">
+            <h2 class="section-title">Senaste Nyheterna</h2>
+            <p class="section-subtitle">Håll dig uppdaterad med våra senaste innovationer</p>
+          </div>
+          
+          <div class="news-grid">
+            <article class="news-card">
+              <div class="news-image">
+                <img src="./images/telephone.jpg" alt="Ny teknologi" />
+              </div>
+              <div class="news-content">
+                <div class="news-category">Innovation</div>
+                <h3 class="news-title">Nya Digitala Verktyg Lanserade</h3>
+                <p class="news-excerpt">
+                  Vi har lanserat nya digitala verktyg som hjälper studenter och forskare 
+                  att hitta relevant information snabbare än någonsin.
+                </p>
+                <div class="news-meta">
+                  <span class="news-date">24 April 2024</span>
+                  <span class="news-read-time">3 min läsning</span>
+                </div>
+              </div>
+            </article>
+            
+            <article class="news-card">
+              <div class="news-image">
+                <img src="./images/grupprum.png" alt="Nya studiemiljöer" />
+              </div>
+              <div class="news-content">
+                <div class="news-category">Faciliteter</div>
+                <h3 class="news-title">Nya Studiemiljöer Öppnar</h3>
+                <p class="news-excerpt">
+                  Moderna och flexibla studieytor som är designade för att stödja 
+                  olika typer av lärande och samarbete.
+                </p>
+                <div class="news-meta">
+                  <span class="news-date">22 April 2024</span>
+                  <span class="news-read-time">5 min läsning</span>
+                </div>
+              </div>
+            </article>
+            
+            <article class="news-card">
+              <div class="news-image">
+                <img src="./images/lecture.jpg" alt="Hållbarhet" />
+              </div>
+              <div class="news-content">
+                <div class="news-category">Hållbarhet</div>
+                <h3 class="news-title">100% Förnybar Energi Uppnått</h3>
+                <p class="news-excerpt">
+                  Som första universitetsbibliotek i Sverige drivs vi nu helt 
+                  av förnybar energi och solpaneler.
+                </p>
+                <div class="news-meta">
+                  <span class="news-date">20 April 2024</span>
+                  <span class="news-read-time">4 min läsning</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section" id="contact">
+        <div class="section-container">
+          <div class="section-header">
+            <h2 class="section-title">Kontakta Oss</h2>
+            <p class="section-subtitle">Vi finns här för att hjälpa dig</p>
+          </div>
+          
+          <div class="contact-grid">
+            <div class="contact-card" data-contact="chat">
+              <div class="contact-icon">💬</div>
+              <h3 class="contact-title">Live Chat</h3>
+              <p class="contact-description">Få omedelbar hjälp från våra experter</p>
+              <div class="contact-status">Online nu</div>
+              <button class="contact-btn">Starta Chat</button>
+            </div>
+            
+            <div class="contact-card" data-contact="phone">
+              <div class="contact-icon">📞</div>
+              <h3 class="contact-title">Telefon</h3>
+              <p class="contact-description">Ring oss för personlig service</p>
+              <div class="contact-info">08-123 456 78</div>
+              <button class="contact-btn">Ring Nu</button>
+            </div>
+            
+            <div class="contact-card" data-contact="email">
+              <div class="contact-icon">✉️</div>
+              <h3 class="contact-title">E-post</h3>
+              <p class="contact-description">Skicka dina frågor till oss</p>
+              <div class="contact-info">info@mattisskogens.se</div>
+              <button class="contact-btn">Skicka E-post</button>
+            </div>
+            
+            <div class="contact-card" data-contact="visit">
+              <div class="contact-icon">📍</div>
+              <h3 class="contact-title">Besök Oss</h3>
+              <p class="contact-description">Kom och upplev framtidens bibliotek</p>
+              <div class="contact-info">Universitetsvägen 1, Stockholm</div>
+              <button class="contact-btn">Få Vägbeskrivning</button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">
-        <div class="links">
-          <h4>Snabblänkar</h4>
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="footer-logo">MU</div>
+            <h3 class="footer-title">Mattisskogens Universitetsbibliotek</h3>
+            <p class="footer-tagline">Framtidens kunskapsportal</p>
+          </div>
+          
           <div class="footer-links">
-            <ul>
-              <div class="linkGrid">
-                <div class="leftLinkColumn">
-                  <li><a href="#cont">Kontakta oss</a></li>
-                  <li><a href="#newli">Nyheter</a></li>
-                  <li><a href="#tid">Öppettider</a></li>
-                  <li><a href="#cal">Kalender</a></li>
-                </div>
-                <div class="rightLinkColumn">
-                  <li><a href="regi.html">Registrera dig</a></li>
-                  <li><a href="books.html#addBook">Lägg till bok</a></li>
-                  <li><a href="books.html">Alla böcker</a></li>
-                </div>
-              </div>
-            </ul>
+            <div class="footer-column">
+              <h4 class="footer-heading">Tjänster</h4>
+              <ul class="footer-list">
+                <li><a href="books.html">Digitala Samlingar</a></li>
+                <li><a href="#services">Forskningsstöd</a></li>
+                <li><a href="#timeline">Studiemiljöer</a></li>
+                <li><a href="#services">Digitala Verktyg</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h4 class="footer-heading">Support</h4>
+              <ul class="footer-list">
+                <li><a href="#contact">Kontakta Oss</a></li>
+                <li><a href="#timeline">Öppettider</a></li>
+                <li><a href="regi.html">Skapa Konto</a></li>
+                <li><a href="#services">Hjälp & FAQ</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h4 class="footer-heading">Community</h4>
+              <ul class="footer-list">
+                <li><a href="#news">Nyheter</a></li>
+                <li><a href="#services">Evenemang</a></li>
+                <li><a href="#services">Forskarnätverk</a></li>
+                <li><a href="#services">Samarbeten</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="social">
-          <h4>Följ oss</h4>
-          <div class="social-list">
-            <ul>
-              <li>
-                <a href="https://twitter.com/?lang=sv" target="_blank" rel="noopener noreferrer" aria-label="Följ oss på X (Twitter)">
-                  <img
-                    src="icons/x-social-media-white-icon.png"
-                    alt=""
-                    width="32"
-                    height="32"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Följ oss på Facebook">
-                  <img
-                    src="icons/facebook-app-round-white-icon.png"
-                    alt=""
-                    width="32"
-                    height="32"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Följ oss på Instagram">
-                  <img
-                    src="icons/instagram-white-icon.png"
-                    alt=""
-                    width="32"
-                    height="32"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Följ oss på LinkedIn">
-                  <img
-                    src="icons/linkedin-app-white-icon.png"
-                    alt=""
-                    width="32"
-                    height="32"
-                  />
-                </a>
-              </li>
-            </ul>
+        
+        <div class="footer-bottom">
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+          </div>
+          
+          <div class="footer-legal">
+            <p>&copy; 2024 Mattisskogens Universitetsbibliotek. Alla rättigheter förbehållna.</p>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Screen reader only styles -->
-    <style>
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-    </style>
-
-    <script src="js/main.js" defer></script>
+    <!-- Scripts -->
+    <script src="js/simple.js" defer></script>
   </body>
 </html>
